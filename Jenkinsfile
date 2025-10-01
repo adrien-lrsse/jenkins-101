@@ -18,7 +18,7 @@ pipeline {
                 sh '''
                 cd myapp
                 python3 -m venv venv
-                source venv/bin/activate
+                . venv/bin/activate
                 pip install --upgrade pip
                 pip install -r requirements.txt
                 '''
@@ -30,7 +30,7 @@ pipeline {
                 echo "Testing.."
                 sh '''
                 cd myapp
-                source venv/bin/activate
+                . venv/bin/activate
                 python hello.py
                 python hello.py --name=Brad
                 '''
